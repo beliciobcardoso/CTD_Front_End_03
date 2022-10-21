@@ -6,4 +6,9 @@
 
 body {
   background-color: #3b3b3b;
+  color: #fff;
+}
+
+li {
+  list-style-type: none;
 }
