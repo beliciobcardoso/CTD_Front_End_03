@@ -1,0 +1,14 @@
+.quinta-aula-posts {
+  ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    li {
+      width: fit-content;
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
+}
