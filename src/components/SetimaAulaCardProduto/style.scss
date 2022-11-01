@@ -1,0 +1,30 @@
+.setima-aula-card-produto-component {
+  background-color: #252525;
+  width: calc(32% - 12px);
+  border: 1px solid #303030;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    filter: brightness(110%);
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    span {
+      color: #81c781;
+    }
+  }
+}
