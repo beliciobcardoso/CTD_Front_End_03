@@ -1,0 +1,39 @@
+.app-loja-component {
+  width: 100vw;
+  padding: 0 40px;
+  max-width: fit-content;
+  margin: 50px auto;
+
+  h1 {
+    margin-bottom: 32px;
+  }
+
+  .tittle-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 42px;
+
+    button {
+      font-size: 30px;
+      font-weight: 900;
+      margin-left: 10px;
+      background-color: #69c269;
+      padding: 1px 24px;
+      border: none;
+      border-radius: 4px;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        filter: brightness(120%);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .products {
+    display: flex;
+    // justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 42px;
+  }
+}
