@@ -1,0 +1,34 @@
+.mainOitavaAula {
+  color: #fff;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .form {
+    background-color: #666666;
+    width: min-content;
+    padding: 10px 20px;
+    label {
+      font-size: x-large;
+    }
+    input {
+      margin-bottom: 5px;
+      font-size: xx-large;
+      padding-left: 10px;
+    }
+  }
+  .ListaTel {
+    background-color: #8d5000;
+    margin-top: 10px;
+    padding: 10px 5px;
+    table {
+      width: 395px;
+      tbody {
+        background-color: #474747;
+        td {
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}
