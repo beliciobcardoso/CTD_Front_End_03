@@ -1,0 +1,75 @@
+.decima-quarta-aula-component {
+  width: 100%;
+  max-width: 1000px;
+  margin: 32px auto;
+
+  form {
+    background-color: #303030;
+    padding: 42px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      margin-bottom: 24px;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 42px;
+
+      input {
+        color: white;
+        padding: 12px 24px;
+        background-color: #404040;
+        border-radius: 12px;
+        border: none;
+      }
+    }
+
+    button {
+      width: fit-content;
+      padding: 12px 32px;
+      border-radius: 4px;
+      border: none;
+      color: white;
+      background-color: #4dc859;
+      font-size: 16px;
+      font-weight: bold;
+      align-self: flex-end;
+      opacity: 1;
+
+      &:hover {
+        box-shadow: 0 0 20px #4dc859;
+      }
+    }
+  }
+
+  .locations {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 42px;
+  }
+
+  button {
+    transition: 0.2s ease-in-out;
+    opacity: 0.4;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+
+  .disabledButton {
+    background-color: #404040;
+    &:hover {
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+  }
+}
