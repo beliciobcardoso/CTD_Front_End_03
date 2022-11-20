@@ -3,17 +3,20 @@ import { ButtonTeste } from '../../components/ButtonTeste';
 import './style.scss';
 export function DecimaTerceiraAula() {
   const [texto, setTexto] = useState('');
+  console.log(
+    '🚀 ~ file: index.jsx ~ line 6 ~ DecimaTerceiraAula ~ texto',
+    texto
+  );
 
   function cancelarPedido(event) {
     event.preventDefault();
     setTexto('');
-    console.log('cancelarPedido');
   }
 
   useEffect(() => {
     setTimeout(() => {
       setTexto('Pizza');
-    }, 3000);
+    }, 5000);
   }, []);
 
   return (
