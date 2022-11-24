@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { DecimaQuintaAulaItem } from '../../components/DecimaQuintaAulaItem';
 import './style.scss';
 
@@ -8,14 +9,17 @@ export function DecimaQuintaAula() {
   const [buttonOff, setButtonOff] = useState(true);
   const [newAddress, setNewAddress] = useState({});
 
+  const { id } = useParams();
+  console.log(id);
+
   useEffect(() => {}, []);
 
-  function searchCep(cepRecieved) {
-    setCep(cepRecieved);
+  function searchCep(cepReceived) {
+    setCep(cepReceived);
     setButtonOff(true);
 
-    if (cepRecieved.length === 8) {
-      fetch(`https://viacep.com.br/ws/${cepRecieved}/json/`).then(
+    if (cepReceived.length === 8) {
+      fetch(`https://viacep.com.br/ws/${cepReceived}/json/`).then(
         (response) => {
           response.json().then((address) => {
             if (address.erro !== undefined) {
@@ -26,6 +30,7 @@ export function DecimaQuintaAula() {
               // Deu Sucesso
               setButtonOff(false);
               setNewAddress(address);
+              console.log(address);
             }
           });
         }
@@ -39,10 +44,12 @@ export function DecimaQuintaAula() {
 
     if (locations.length === 0) {
       setLocations([...locations, newAddress]);
+      setCep('');
     } else {
       locations.map((location) => {
         if (location.cep.replace('-', '') !== cep) {
           setLocations([...locations, newAddress]);
+          setCep('');
         } else {
           alert('Cep já cadastrado!');
         }
