@@ -9,23 +9,30 @@ import { TerceiraAula } from './lessons/TerceiraAula';
 import { AppGames } from './pages/AppGames';
 import { AppLoja } from './pages/AppLoja';
 
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { MainLayout } from './components/MainLayout';
+
 function App() {
-  return (
-    <>
-      {/* <Login></Login> */}
-      {/* <SegundaAula></SegundaAula> */}
-      {/* <TerceiraAula></TerceiraAula> */}
-      {/* <QuartaAula></QuartaAula> */}
-      {/* <QuintaAula></QuintaAula> */}
-      {/* <SextaAula></SextaAula> */}
-      {/* <AppGames></AppGames> */}
-      {/* <SetimaAula></SetimaAula> */}
-      {/* <AppLoja></AppLoja> */}
-      {/* <OitavaAula></OitavaAula> */}
-      {/* <DecimaTerceiraAula></DecimaTerceiraAula> */}
-      <DecimaQuintaAula />
-    </>
-  );
+  const appRouter = createBrowserRouter([
+    {
+      path: '',
+      element: <MainLayout />,
+      children: [
+        { path: 'AppGames', element: <AppGames /> },
+        { path: 'AppLoja', element: <AppLoja /> },
+        { path: 'TerceiraAula', element: <TerceiraAula /> },
+        { path: 'QuartaAula', element: <QuartaAula /> },
+        { path: 'QuintaAula', element: <QuintaAula /> },
+        { path: 'SextaAula', element: <SextaAula /> },
+        { path: 'SetimaAula', element: <SetimaAula /> },
+        { path: 'OitavaAula', element: <OitavaAula /> },
+        { path: 'DecimaTerceiraAula', element: <DecimaTerceiraAula /> },
+        { path: 'DecimaQuintaAula/:id', element: <DecimaQuintaAula /> },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={appRouter} />;
 }
 
 export default App;
