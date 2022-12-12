@@ -1,15 +1,102 @@
 .main-layout-component {
-  .main-layout-component-header {
-    background-color: #404040;
-    padding: 42px;
-    margin-bottom: 12px;
-    nav {
-      padding: 10px 0;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-areas:
+    'header header'
+    'aside  main';
+  gap: 12px;
+
+  // Estilização para o Modo Dark
+  &.dark {
+    .main-layout-component-header {
+      background-color: #4b4b4b;
+    }
+
+    .main-layout-component-aside {
+      background-color: #505050;
+    }
+
+    .main-layout-component-main {
+      background-color: #505050;
     }
   }
 
-  .main-layout-component-main {
-    background-color: #505050;
+  // Estilização para o Modo Light
+  &.light {
+    .main-layout-component-header {
+      background-color: #ffffff;
+      h1 {
+        color: #000000;
+      }
+    }
+
+    .main-layout-component-aside {
+      background-color: #ffff;
+      .menuLateralSection {
+        color: #000000;
+      }
+      li {
+        color: #000000;
+      }
+    }
+
+    .main-layout-component-main {
+      background-color: #ffff;
+      .configurations-component {
+        color: #000000;
+      }
+    }
+  }
+
+  &.contrast {
+    .main-layout-component-header {
+      background-color: #d8d8d8;
+      h1 {
+        color: #000000;
+      }
+    }
+
+    .main-layout-component-aside {
+      background-color: #d8d8d8;
+      .menuLateralSection {
+        color: #000000;
+      }
+      li {
+        color: #000000;
+      }
+    }
+
+    .main-layout-component-main {
+      background-color: #d8d8d8;
+      .configurations-component {
+        color: #000000;
+      }
+    }
+  }
+
+  .main-layout-component-header {
     padding: 42px;
+    grid-area: header;
+    margin-bottom: 12px;
+  }
+
+  .main-layout-component-aside {
+    grid-area: aside;
+    margin-left: 12px;
+    padding: 42px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+
+  .main-layout-component-main {
+    min-height: calc(100vh - 132px - 24px);
+    padding: 42px;
+    grid-area: main;
+    border-radius: 12px;
+    margin-right: 12px;
+    margin-bottom: 12px;
   }
 }

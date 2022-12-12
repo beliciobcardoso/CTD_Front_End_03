@@ -1,0 +1,69 @@
+.task-component {
+
+    background-color: #353535;
+    padding: 32px;
+    border-radius: 12px;
+
+    h1 {
+
+        opacity: .8;
+
+    }
+
+    button {
+
+        color: white;
+        font-size: 16px;
+        width: fit-content;
+        padding: 12px 24px;
+        border-radius: 12px;
+        border: none;
+        align-self: flex-end;
+        opacity: .6;
+        margin-top: 32px;
+        transition: .2s;
+
+        &.delete {
+
+            background-color: #de4c9c;
+
+        }
+
+        &.edit {
+
+            background-color: #4cb0de;
+
+        }
+
+        &.finish {
+
+            background-color: #4cde9a;
+
+        }
+
+        &:hover {
+
+            opacity: 1;
+            box-shadow: 0 0 10px #4cde9a58;
+            cursor: pointer;
+
+        }
+
+        &:disabled {
+
+            opacity: .4;
+            box-shadow: none;
+            cursor: not-allowed;
+
+        }
+
+    }
+
+    .buttons {
+
+        display: flex;
+        gap: 12px;
+
+    }
+
+}

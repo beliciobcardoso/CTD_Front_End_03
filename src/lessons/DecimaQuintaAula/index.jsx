@@ -9,10 +9,10 @@ export function DecimaQuintaAula() {
   const [buttonOff, setButtonOff] = useState(true);
   const [newAddress, setNewAddress] = useState({});
 
-  const { id } = useParams();
-  console.log(id);
+  // const { id } = useParams();
+  // console.log(id);
 
-  useEffect(() => {}, []);
+  // useEffect(() => {}, []);
 
   function searchCep(cepReceived) {
     setCep(cepReceived);
@@ -80,10 +80,12 @@ export function DecimaQuintaAula() {
           <input
             type='number'
             value={cep}
+            aria-label='cep'
             onChange={(event) => searchCep(event.target.value)}
           />
         </div>
         <button
+          aria-label='submit-button'
           //   disabled={buttonOff ? true : false} deixei este comentário para lembrar como eu cheguei no raciocinio a baixo
           disabled={buttonOff}
           className={buttonOff ? 'disabledButton' : ''}

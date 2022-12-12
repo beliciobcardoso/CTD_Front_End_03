@@ -1,3 +1,5 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
 import { DecimaQuintaAula } from './lessons/DecimaQuintaAula';
 import { DecimaTerceiraAula } from './lessons/DecimaTerceiraAula';
 import { OitavaAula } from './lessons/OitavaAula';
@@ -9,8 +11,13 @@ import { TerceiraAula } from './lessons/TerceiraAula';
 import { AppGames } from './pages/AppGames';
 import { AppLoja } from './pages/AppLoja';
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { MainLayout } from './components/MainLayout';
+import { Home } from './pages/Home';
+import { ToDo } from './pages/ToDo';
+
+import { ThemeProvider } from './hooks/useTheme';
+import { LanguageProvider } from './hooks/useLanguage';
+import { Configurations } from './pages/Configurations';
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -18,8 +25,11 @@ function App() {
       path: '',
       element: <MainLayout />,
       children: [
+        { path: '', element: <Home /> },
+        { path: 'Configurations', element: <Configurations /> },
         { path: 'AppGames', element: <AppGames /> },
         { path: 'AppLoja', element: <AppLoja /> },
+        { path: 'ToDo', element: <ToDo /> },
         { path: 'TerceiraAula', element: <TerceiraAula /> },
         { path: 'QuartaAula', element: <QuartaAula /> },
         { path: 'QuintaAula', element: <QuintaAula /> },
@@ -31,8 +41,13 @@ function App() {
       ],
     },
   ]);
-
-  return <RouterProvider router={appRouter} />;
+  return (
+    <ThemeProvider>
+      <LanguageProvider>
+        <RouterProvider router={appRouter} />
+      </LanguageProvider>
+    </ThemeProvider>
+  );
 }
 
 export default App;
